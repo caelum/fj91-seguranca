@@ -42,7 +42,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 			.authorizeRequests().antMatchers(authenticatedUrls).authenticated()
 			.and().authorizeRequests().antMatchers(permittedUrls).permitAll()
-			.and().formLogin().loginPage("/login");
+			.and().formLogin().loginPage("/login")
+			.and().headers().contentSecurityPolicy("default-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self'; frame-src 'self'; font-src 'self' data: ; img-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'");
 	}
 	
 }
