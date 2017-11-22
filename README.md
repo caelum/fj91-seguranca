@@ -1,4 +1,4 @@
-# Projeto Class Loader
+# Projeto Segurança
 Projeto com falhas de segurança.
 
 Utilizado no curso de Arquitetura Java da Caelum - https://www.caelum.com.br/curso-arquitetura-java
