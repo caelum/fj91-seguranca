@@ -26,19 +26,19 @@
 						<c:forEach items="${processos}" var="processo">
 							<tr>
 								<td>
-									${processo.id}
+									<c:out value="${processo.id}" />
 								</td>
 								
 								<td>
-									${processo.dataDeCadastroFormatada()}
+									<c:out value="${processo.dataDeCadastroFormatada()}" />
 								</td>
 								
 								<td>
-									${processo.autor}
+									<c:out value="${processo.autor}" />
 								</td>
 								
 								<td>
-									${processo.status.descricao}
+									<c:out value="${processo.status.descricao}" />
 								</td>
 								
 								<td>
