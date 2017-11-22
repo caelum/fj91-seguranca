@@ -9,6 +9,8 @@
 			<h1 class="text-center">Cadastrar novo Processo</h1>
 			
 			<form method="post" action="<c:url value='/processos' />">
+				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 				<div class="form-group">
 					<label for="autor">Autor</label>
 					<input id="autor" name="autor" class="form-control" required="required" />

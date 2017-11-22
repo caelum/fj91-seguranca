@@ -45,6 +45,7 @@
 									<c:if test="${processo.estaEmAnalise()}">
 										<form method="post" action="<c:url value='/processos/${processo.id}/aceitar' />">
 											<input type="hidden" name="_method" value="PATCH">
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 											
 											<button type="submit" class="btn btn-success">
 												<span class="glyphicon glyphicon-thumbs-up"></span> Aceitar
@@ -53,6 +54,7 @@
 										
 										<form method="post" action="<c:url value='/processos/${processo.id}/rejeitar' />">
 											<input type="hidden" name="_method" value="PATCH">
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 											
 											<button type="submit" class="btn btn-danger">
 												<span class="glyphicon glyphicon-thumbs-down"></span> Rejeitar
@@ -63,7 +65,8 @@
 									<c:if test="${processo.estaEmAndamento()}">
 										<form method="post" action="<c:url value='/processos/${processo.id}/encerrar' />">
 											<input type="hidden" name="_method" value="PATCH">
-											
+											<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+
 											<button type="submit" class="btn btn-info">
 												<span class="glyphicon glyphicon-check"></span> Encerrar
 											</button>

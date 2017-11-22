@@ -39,7 +39,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		String[] permittedUrls = { "/", "/home", "/login" };
 		String[] authenticatedUrls = { "/processos", "/processos/**/*" };
 		
-		http.csrf().disable()
+		http.csrf().and()
 			.authorizeRequests().antMatchers(authenticatedUrls).authenticated()
 			.and().authorizeRequests().antMatchers(permittedUrls).permitAll()
 			.and().formLogin().loginPage("/login")
