@@ -10,4 +10,4 @@ mysql -u root seguranca
 insert into usuario(nome, login, senha) values('Admin', 'admin', '$2a$10$ggY6QemLtXTV9z7pr0xKf.gdjhplcldE9iwo.IPIeCbvdRGM4UifC');
 ```
 
-Para logar na aplicação utilizar o login **admin** e a senha **123456**
+Para logar na aplicação acesse: http://localhost:8080/seguranca e utilize o login **admin** e a senha **123456**
