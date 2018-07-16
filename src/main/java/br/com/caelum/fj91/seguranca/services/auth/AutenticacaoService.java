@@ -1,4 +1,4 @@
-package br.com.caelum.fj91.seguranca.services;
+package br.com.caelum.fj91.seguranca.services.auth;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
