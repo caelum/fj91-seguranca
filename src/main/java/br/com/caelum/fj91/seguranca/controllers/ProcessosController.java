@@ -22,7 +22,7 @@ public class ProcessosController {
 	private static final String PAGINA_CADASTRO_PROCESSO = "processos/processo-form";
 	private static final String REDIRECT_PAGINA_PROCESSOS = "redirect:/processos";
 	
-	private static final Sort SORT_BY_DATA_DESC = new Sort("dataDeCadastro");
+	private static final Sort SORT_BY_DATA_DESC = Sort.by("dataDeCadastro");
 	
 	private final ProcessoRepository processoRepository;
 
@@ -52,7 +52,7 @@ public class ProcessosController {
 	@PatchMapping("/{id}/aceitar")
 	@Transactional
 	public String aceitar(@PathVariable("id") Long id, RedirectAttributes redirectModel) {
-		Processo emAnalise = processoRepository.findOne(id);
+		Processo emAnalise = processoRepository.getOne(id);
 		emAnalise.aceitar();
 		this.processoRepository.save(emAnalise);
 		redirectModel.addFlashAttribute("msg", "Processo aceito com sucesso!");
@@ -62,7 +62,7 @@ public class ProcessosController {
 	@PatchMapping("/{id}/rejeitar")
 	@Transactional
 	public String rejeitar(@PathVariable("id") Long id, RedirectAttributes redirectModel) {
-		Processo emAnalise = processoRepository.findOne(id);
+		Processo emAnalise = processoRepository.getOne(id);
 		emAnalise.rejeitar();
 		this.processoRepository.save(emAnalise);
 		redirectModel.addFlashAttribute("msg", "Processo rejeitado com sucesso!");
@@ -72,7 +72,7 @@ public class ProcessosController {
 	@PatchMapping("/{id}/encerrar")
 	@Transactional
 	public String encerrar(@PathVariable("id") Long id, RedirectAttributes redirectModel) {
-		Processo emAndamento = processoRepository.findOne(id);
+		Processo emAndamento = processoRepository.getOne(id);
 		emAndamento.encerrar();
 		this.processoRepository.save(emAndamento);
 		redirectModel.addFlashAttribute("msg", "Processo encerrado com sucesso!");
